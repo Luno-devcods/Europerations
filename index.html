@@ -1,121 +1,264 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EuroOperations — Operational Automation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Europerations — Operational Automation</title>
 
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #2563eb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 48px;
+    }
+
+    header nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--secondary);
+      margin-bottom: 32px;
+    }
+
+    .hero a {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .grid .card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .grid .card p {
+      color: var(--secondary);
+      font-size: 15px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 48px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 12px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .cta a {
+      background-color: white;
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 14px;
+      color: var(--secondary);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<header class="header">
-  <div class="container header-content">
-    <img src="assets/logo.png" alt="EuroOperations Logo" class="logo">
-    <nav>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#escopo">O serviço</a>
-      <a href="#contato" class="btn-outline">Contato</a>
-    </nav>
-  </div>
+<header>
+  <img src="logo.png" alt="Europerations logo">
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#service">Service</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="container hero-grid">
+<main>
+
+  <section class="hero">
     <div>
-      <h1>We help European businesses prevent client loss caused by operational disorganisation.</h1>
+      <h1>We analyse operational problems caused by manual or disorganised workflows.</h1>
       <p>
-        When customer requests arrive through multiple channels and depend on manual handling,
-        delays and missed opportunities become inevitable.
+        We help European businesses eliminate operational bottlenecks, reduce human error,
+        and recover lost time through practical automation.
       </p>
-      <a href="#contato" class="btn-primary">Request an operational analysis</a>
+      <a href="#contact">Request an analysis</a>
     </div>
 
-    <div class="hero-card">
-      <h3>Typical problems we solve</h3>
-      <ul>
-        <li>Client requests missed or answered late</li>
+    <div class="card">
+      <strong>Typical problems we solve:</strong>
+      <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
+        <li>Missed or delayed customer requests</li>
         <li>Manual handling across multiple platforms</li>
-        <li>Operational dependency on the owner</li>
-        <li>Errors and loss of information</li>
+        <li>High dependency on owner attention</li>
+        <li>Operational errors and data risk</li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="como-funciona" class="section">
-  <div class="container">
+  <section id="how" class="section">
     <h2>How it works</h2>
-
-    <div class="steps">
-      <div class="step">
-        <span>1</span>
-        <h4>Diagnose</h4>
-        <p>You describe your operational issue via a short form.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Diagnose</h3>
+        <p>You describe your operational issue through a short form.</p>
       </div>
-
-      <div class="step">
-        <span>2</span>
-        <h4>Analyse</h4>
-        <p>We identify where manual actions can be replaced or simplified.</p>
+      <div class="card">
+        <h3>2. Analyse</h3>
+        <p>We evaluate where rules can replace manual decisions.</p>
       </div>
-
-      <div class="step">
-        <span>3</span>
-        <h4>Implement</h4>
-        <p>We build a simple, focused automation adapted to your workflow.</p>
+      <div class="card">
+        <h3>3. Implement</h3>
+        <p>We build a simple, reliable automation adapted to your workflow.</p>
       </div>
-
-      <div class="step">
-        <span>4</span>
-        <h4>Deliver</h4>
-        <p>You receive documentation and a short handover.</p>
+      <div class="card">
+        <h3>4. Deliver</h3>
+        <p>You receive documentation and a short walkthrough.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="escopo" class="section dark">
-  <div class="container grid-3">
-    <div class="card">
-      <h3>What we do</h3>
-      <p>
-        Operational automation, request centralisation, notifications,
-        integrations and basic error prevention.
-      </p>
+  <section id="service" class="section">
+    <h2>Service scope</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>What we do</h3>
+        <p>
+          Operational automation, workflow centralisation,
+          notifications, basic integrations and error prevention.
+        </p>
+      </div>
+      <div class="card">
+        <h3>What we don’t do</h3>
+        <p>
+          Daily operation, customer service management,
+          or long-term business administration.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Investment</h3>
+        <p>
+          Automation projects start from €250,
+          adjusted according to complexity.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>What we don’t do</h3>
-      <p>
-        Marketing strategy, long-term restructuring,
-        large or complex software projects.
-      </p>
+  <section id="contact" class="section">
+    <div class="cta">
+      <h2>Request an operational analysis</h2>
+      <p>Please answer a few questions so we can assess your case.</p>
+      <a href="https://forms.gle/SEU-LINK-AQUI" target="_blank">
+        Open the form
+      </a>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Investment</h3>
-      <p>
-        Implementations start from €250,
-        adjusted according to project complexity.
-      </p>
-    </div>
-  </div>
-</section>
+</main>
 
-<section id="contato" class="cta">
-  <div class="container">
-    <h2>Request an operational analysis</h2>
-    <p>Please answer a few questions so we can assess your case.</p>
-    <a href="#" class="btn-primary">Start evaluation</a>
-    <!-- depois trocamos por Google Forms / Calendly -->
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>© EuroOperations — Operational Automation for European SMEs</p>
-  </div>
+<footer>
+  © 2025 Europerations — Operational Automation
 </footer>
 
 </body>
