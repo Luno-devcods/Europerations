@@ -42,24 +42,21 @@
       width: auto;
     }
 
-    nav {
+    header nav {
       display: flex;
       align-items: center;
-      gap: 24px;
     }
 
-    nav a {
+    header nav a {
+      margin-left: 24px;
       text-decoration: none;
       color: var(--secondary);
       font-weight: 500;
     }
 
-    select {
+    header select {
+      margin-left: 24px;
       padding: 6px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: white;
-      font-weight: 500;
     }
 
     main {
@@ -120,12 +117,41 @@
       gap: 24px;
     }
 
+    .grid .card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .grid .card p {
+      color: var(--secondary);
+      font-size: 15px;
+    }
+
     .cta {
       text-align: center;
       padding: 48px;
       background-color: var(--primary);
       color: white;
       border-radius: 12px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .cta a {
+      background-color: white;
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     footer {
@@ -147,16 +173,14 @@
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png" alt="Europerations logo">
-
+  <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png/europerations-logo.png" alt="Europerations logo">
   <nav>
-    <a href="#how" data-key="navHow"></a>
-    <a href="#service" data-key="navService"></a>
-    <a href="#contact" data-key="navContact"></a>
+    <a href="#how" data-key="navHow">How it works</a>
+    <a href="#service" data-key="navService">Service</a>
+    <a href="#contact" data-key="navContact">Contact</a>
 
     <select id="languageSwitcher">
       <option value="en">EN</option>
@@ -168,110 +192,112 @@
 
 <main>
 
-  <section class="hero">
-    <div>
-      <h1 data-key="heroTitle"></h1>
-      <p data-key="heroText"></p>
-      <a href="#contact" data-key="heroBtn"></a>
-    </div>
+<section class="hero">
+  <div>
+    <h1 data-key="heroTitle">
+      We analyse operational problems caused by manual or disorganised workflows.
+    </h1>
+    <p data-key="heroText">
+      We help European businesses eliminate operational bottlenecks, reduce human error,
+      and recover lost time through practical automation.
+    </p>
+    <a href="#contact" data-key="heroBtn">Request an analysis</a>
+  </div>
 
-    <div class="card">
-      <strong data-key="problemsTitle"></strong>
-      <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
-        <li data-key="p1"></li>
-        <li data-key="p2"></li>
-        <li data-key="p3"></li>
-        <li data-key="p4"></li>
-      </ul>
-    </div>
-  </section>
+  <div class="card">
+    <strong data-key="problemsTitle">Typical problems we solve:</strong>
+    <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
+      <li data-key="p1">Missed or delayed customer requests</li>
+      <li data-key="p2">Manual handling across multiple platforms</li>
+      <li data-key="p3">High dependency on owner attention</li>
+      <li data-key="p4">Operational errors and data risk</li>
+    </ul>
+  </div>
+</section>
 
-  <section id="how" class="section">
-    <h2 data-key="howTitle"></h2>
-  </section>
+<section id="how" class="section">
+  <h2 data-key="howTitle">How it works</h2>
+</section>
 
-  <section id="contact" class="section">
-    <div class="cta">
-      <h2 data-key="ctaTitle"></h2>
-      <p data-key="ctaText"></p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-key="ctaBtn"></a>
-    </div>
-  </section>
+<section id="service" class="section">
+  <h2 data-key="serviceTitle">Service scope</h2>
+</section>
+
+<section id="contact" class="section">
+  <div class="cta">
+    <h2 data-key="ctaTitle">Request an operational analysis</h2>
+    <p data-key="ctaText">Please answer a few questions so we can assess your case.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-key="ctaBtn">
+      Open the form
+    </a>
+  </div>
+</section>
 
 </main>
 
-<footer data-key="footer"></footer>
+<footer>
+  © 2025 Europerations — Operational Automation
+</footer>
 
 <script>
-const translations = {
+const t = {
   en: {
-    navHow: "How it works",
-    navService: "Service",
-    navContact: "Contact",
-    heroTitle: "We analyse operational problems caused by manual or disorganised workflows.",
-    heroText: "We help European businesses eliminate bottlenecks, reduce errors and recover time through automation.",
-    heroBtn: "Request an analysis",
-    problemsTitle: "Typical problems we solve:",
-    p1: "Missed or delayed requests",
-    p2: "Manual work across platforms",
-    p3: "Owner dependency",
-    p4: "Operational errors",
-    howTitle: "How it works",
-    ctaTitle: "Request an operational analysis",
-    ctaText: "Answer a few questions so we can assess your case.",
-    ctaBtn: "Open the form",
-    footer: "© 2025 Europerations — Operational Automation"
+    navHow:"How it works", navService:"Service", navContact:"Contact",
+    heroTitle:"We analyse operational problems caused by manual or disorganised workflows.",
+    heroText:"We help European businesses eliminate operational bottlenecks, reduce human error, and recover lost time through practical automation.",
+    heroBtn:"Request an analysis",
+    problemsTitle:"Typical problems we solve:",
+    p1:"Missed or delayed customer requests",
+    p2:"Manual handling across multiple platforms",
+    p3:"High dependency on owner attention",
+    p4:"Operational errors and data risk",
+    howTitle:"How it works",
+    serviceTitle:"Service scope",
+    ctaTitle:"Request an operational analysis",
+    ctaText:"Please answer a few questions so we can assess your case.",
+    ctaBtn:"Open the form"
   },
   de: {
-    navHow: "Ablauf",
-    navService: "Service",
-    navContact: "Kontakt",
-    heroTitle: "Wir analysieren operative Probleme durch manuelle oder ungeordnete Abläufe.",
-    heroText: "Wir helfen europäischen Unternehmen, Engpässe zu beseitigen und Zeit durch Automatisierung zu gewinnen.",
-    heroBtn: "Analyse anfordern",
-    problemsTitle: "Typische Probleme:",
-    p1: "Verpasste Kundenanfragen",
-    p2: "Manuelle Prozesse",
-    p3: "Abhängigkeit vom Inhaber",
-    p4: "Operative Fehler",
-    howTitle: "So funktioniert es",
-    ctaTitle: "Operative Analyse anfordern",
-    ctaText: "Beantworten Sie einige Fragen zur Bewertung.",
-    ctaBtn: "Formular öffnen",
-    footer: "© 2025 Europerations — Operative Automatisierung"
+    navHow:"So funktioniert es", navService:"Service", navContact:"Kontakt",
+    heroTitle:"Wir analysieren operative Probleme durch manuelle oder ungeordnete Arbeitsabläufe.",
+    heroText:"Wir helfen europäischen Unternehmen, Engpässe zu beseitigen, Fehler zu reduzieren und Zeit durch Automatisierung zurückzugewinnen.",
+    heroBtn:"Analyse anfordern",
+    problemsTitle:"Typische Probleme, die wir lösen:",
+    p1:"Übersehene oder verspätete Kundenanfragen",
+    p2:"Manuelle Bearbeitung über mehrere Plattformen",
+    p3:"Hohe Abhängigkeit vom Inhaber",
+    p4:"Operative Fehler und Datenrisiken",
+    howTitle:"So funktioniert es",
+    serviceTitle:"Leistungsumfang",
+    ctaTitle:"Operative Analyse anfordern",
+    ctaText:"Bitte beantworten Sie einige Fragen, damit wir Ihren Fall bewerten können.",
+    ctaBtn:"Formular öffnen"
   },
   fr: {
-    navHow: "Fonctionnement",
-    navService: "Service",
-    navContact: "Contact",
-    heroTitle: "Nous analysons les problèmes opérationnels causés par des flux manuels ou désorganisés.",
-    heroText: "Nous aidons les entreprises européennes à éliminer les blocages grâce à l’automatisation.",
-    heroBtn: "Demander une analyse",
-    problemsTitle: "Problèmes courants :",
-    p1: "Demandes clients manquées",
-    p2: "Traitement manuel",
-    p3: "Dépendance au dirigeant",
-    p4: "Erreurs opérationnelles",
-    howTitle: "Comment ça marche",
-    ctaTitle: "Demander une analyse opérationnelle",
-    ctaText: "Répondez à quelques questions.",
-    ctaBtn: "Ouvrir le formulaire",
-    footer: "© 2025 Europerations — Automatisation opérationnelle"
+    navHow:"Fonctionnement", navService:"Service", navContact:"Contact",
+    heroTitle:"Nous analysons les problèmes opérationnels causés par des flux de travail manuels ou désorganisés.",
+    heroText:"Nous aidons les entreprises européennes à éliminer les blocages, réduire les erreurs et récupérer du temps grâce à l’automatisation.",
+    heroBtn:"Demander une analyse",
+    problemsTitle:"Problèmes typiques que nous résolvons :",
+    p1:"Demandes clients manquées ou retardées",
+    p2:"Traitement manuel sur plusieurs plateformes",
+    p3:"Forte dépendance au dirigeant",
+    p4:"Erreurs opérationnelles et risques de données",
+    howTitle:"Comment ça fonctionne",
+    serviceTitle:"Portée du service",
+    ctaTitle:"Demander une analyse opérationnelle",
+    ctaText:"Veuillez répondre à quelques questions afin que nous puissions évaluer votre cas.",
+    ctaBtn:"Ouvrir le formulaire"
   }
 };
 
-function setLanguage(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-key]").forEach(el => {
-    el.textContent = translations[lang][el.dataset.key];
-  });
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-key]").forEach(e=>e.textContent=t[l][e.dataset.key]);
 }
 
-document.getElementById("languageSwitcher").addEventListener("change", e => {
-  setLanguage(e.target.value);
-});
-
-setLanguage("en");
+document.getElementById("languageSwitcher").onchange=e=>setLang(e.target.value);
+setLang("en");
 </script>
 
 </body>
