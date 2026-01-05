@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,21 +42,11 @@
       width: auto;
     }
 
-    header nav {
-      display: flex;
-      align-items: center;
-    }
-
     header nav a {
       margin-left: 24px;
       text-decoration: none;
       color: var(--secondary);
       font-weight: 500;
-    }
-
-    header select {
-      margin-left: 24px;
-      padding: 6px 10px;
     }
 
     main {
@@ -178,60 +168,93 @@
 <header>
   <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png/europerations-logo.png" alt="Europerations logo">
   <nav>
-    <a href="#how" data-key="navHow">How it works</a>
-    <a href="#service" data-key="navService">Service</a>
-    <a href="#contact" data-key="navContact">Contact</a>
-
-    <select id="languageSwitcher">
-      <option value="en">EN</option>
-      <option value="de">DE</option>
-      <option value="fr">FR</option>
-    </select>
+    <a href="#how">How it works</a>
+    <a href="#service">Service</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 
-<section class="hero">
-  <div>
-    <h1 data-key="heroTitle">
-      We analyse operational problems caused by manual or disorganised workflows.
-    </h1>
-    <p data-key="heroText">
-      We help European businesses eliminate operational bottlenecks, reduce human error,
-      and recover lost time through practical automation.
-    </p>
-    <a href="#contact" data-key="heroBtn">Request an analysis</a>
-  </div>
+  <section class="hero">
+    <div>
+      <h1>We analyse operational problems caused by manual or disorganised workflows.</h1>
+      <p>
+        We help European businesses eliminate operational bottlenecks, reduce human error,
+        and recover lost time through practical automation.
+      </p>
+      <a href="#contact">Request an analysis</a>
+    </div>
 
-  <div class="card">
-    <strong data-key="problemsTitle">Typical problems we solve:</strong>
-    <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
-      <li data-key="p1">Missed or delayed customer requests</li>
-      <li data-key="p2">Manual handling across multiple platforms</li>
-      <li data-key="p3">High dependency on owner attention</li>
-      <li data-key="p4">Operational errors and data risk</li>
-    </ul>
-  </div>
-</section>
+    <div class="card">
+      <strong>Typical problems we solve:</strong>
+      <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
+        <li>Missed or delayed customer requests</li>
+        <li>Manual handling across multiple platforms</li>
+        <li>High dependency on owner attention</li>
+        <li>Operational errors and data risk</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="how" class="section">
-  <h2 data-key="howTitle">How it works</h2>
-</section>
+  <section id="how" class="section">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Diagnose</h3>
+        <p>You describe your operational issue through a short form.</p>
+      </div>
+      <div class="card">
+        <h3>2. Analyse</h3>
+        <p>We evaluate where rules can replace manual decisions.</p>
+      </div>
+      <div class="card">
+        <h3>3. Implement</h3>
+        <p>We build a simple, reliable automation adapted to your workflow.</p>
+      </div>
+      <div class="card">
+        <h3>4. Deliver</h3>
+        <p>You receive documentation and a short walkthrough.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="service" class="section">
-  <h2 data-key="serviceTitle">Service scope</h2>
-</section>
+  <section id="service" class="section">
+    <h2>Service scope</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>What we do</h3>
+        <p>
+          Operational automation, workflow centralisation,
+          notifications, basic integrations and error prevention.
+        </p>
+      </div>
+      <div class="card">
+        <h3>What we don’t do</h3>
+        <p>
+          Daily operation, customer service management,
+          or long-term business administration.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Investment</h3>
+        <p>
+          Automation projects start from €250,
+          adjusted according to complexity.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="section">
-  <div class="cta">
-    <h2 data-key="ctaTitle">Request an operational analysis</h2>
-    <p data-key="ctaText">Please answer a few questions so we can assess your case.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-key="ctaBtn">
-      Open the form
-    </a>
-  </div>
-</section>
+  <section id="contact" class="section">
+    <div class="cta">
+      <h2>Request an operational analysis</h2>
+      <p>Please answer a few questions so we can assess your case.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank">
+        Open the form
+      </a>
+    </div>
+  </section>
 
 </main>
 
@@ -239,66 +262,5 @@
   © 2025 Europerations — Operational Automation
 </footer>
 
-<script>
-const t = {
-  en: {
-    navHow:"How it works", navService:"Service", navContact:"Contact",
-    heroTitle:"We analyse operational problems caused by manual or disorganised workflows.",
-    heroText:"We help European businesses eliminate operational bottlenecks, reduce human error, and recover lost time through practical automation.",
-    heroBtn:"Request an analysis",
-    problemsTitle:"Typical problems we solve:",
-    p1:"Missed or delayed customer requests",
-    p2:"Manual handling across multiple platforms",
-    p3:"High dependency on owner attention",
-    p4:"Operational errors and data risk",
-    howTitle:"How it works",
-    serviceTitle:"Service scope",
-    ctaTitle:"Request an operational analysis",
-    ctaText:"Please answer a few questions so we can assess your case.",
-    ctaBtn:"Open the form"
-  },
-  de: {
-    navHow:"So funktioniert es", navService:"Service", navContact:"Kontakt",
-    heroTitle:"Wir analysieren operative Probleme durch manuelle oder ungeordnete Arbeitsabläufe.",
-    heroText:"Wir helfen europäischen Unternehmen, Engpässe zu beseitigen, Fehler zu reduzieren und Zeit durch Automatisierung zurückzugewinnen.",
-    heroBtn:"Analyse anfordern",
-    problemsTitle:"Typische Probleme, die wir lösen:",
-    p1:"Übersehene oder verspätete Kundenanfragen",
-    p2:"Manuelle Bearbeitung über mehrere Plattformen",
-    p3:"Hohe Abhängigkeit vom Inhaber",
-    p4:"Operative Fehler und Datenrisiken",
-    howTitle:"So funktioniert es",
-    serviceTitle:"Leistungsumfang",
-    ctaTitle:"Operative Analyse anfordern",
-    ctaText:"Bitte beantworten Sie einige Fragen, damit wir Ihren Fall bewerten können.",
-    ctaBtn:"Formular öffnen"
-  },
-  fr: {
-    navHow:"Fonctionnement", navService:"Service", navContact:"Contact",
-    heroTitle:"Nous analysons les problèmes opérationnels causés par des flux de travail manuels ou désorganisés.",
-    heroText:"Nous aidons les entreprises européennes à éliminer les blocages, réduire les erreurs et récupérer du temps grâce à l’automatisation.",
-    heroBtn:"Demander une analyse",
-    problemsTitle:"Problèmes typiques que nous résolvons :",
-    p1:"Demandes clients manquées ou retardées",
-    p2:"Traitement manuel sur plusieurs plateformes",
-    p3:"Forte dépendance au dirigeant",
-    p4:"Erreurs opérationnelles et risques de données",
-    howTitle:"Comment ça fonctionne",
-    serviceTitle:"Portée du service",
-    ctaTitle:"Demander une analyse opérationnelle",
-    ctaText:"Veuillez répondre à quelques questions afin que nous puissions évaluer votre cas.",
-    ctaBtn:"Ouvrir le formulaire"
-  }
-};
-
-function setLang(l){
-  document.documentElement.lang=l;
-  document.querySelectorAll("[data-key]").forEach(e=>e.textContent=t[l][e.dataset.key]);
-}
-
-document.getElementById("languageSwitcher").onchange=e=>setLang(e.target.value);
-setLang("en");
-</script>
-
 </body>
-</html>
+</html> 
