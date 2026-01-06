@@ -42,11 +42,39 @@
       width: auto;
     }
 
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
     header nav a {
-      margin-left: 24px;
       text-decoration: none;
       color: var(--secondary);
       font-weight: 500;
+    }
+
+    .language-selector {
+      position: relative;
+      display: inline-block;
+    }
+
+    .language-selector select {
+      padding: 8px 32px 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--card);
+      color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23334155' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+
+    .language-selector select:hover {
+      border-color: var(--accent);
     }
 
     main {
@@ -160,6 +188,11 @@
         flex-direction: column;
         gap: 20px;
       }
+
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -168,9 +201,16 @@
 <header>
   <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png/europerations-logo.png" alt="Europerations logo">
   <nav>
-    <a href="#how">How it works</a>
-    <a href="#service">Service</a>
-    <a href="#contact">Contact</a>
+    <a href="#how" data-i18n="nav_how">How it works</a>
+    <a href="#service" data-i18n="nav_service">Service</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+    <div class="language-selector">
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+    </div>
   </nav>
 </header>
 
@@ -178,67 +218,67 @@
 
   <section class="hero">
     <div>
-      <h1>We analyse operational problems caused by manual or disorganised workflows.</h1>
-      <p>
+      <h1 data-i18n="hero_title">We analyse operational problems caused by manual or disorganised workflows.</h1>
+      <p data-i18n="hero_description">
         We help European businesses eliminate operational bottlenecks, reduce human error,
         and recover lost time through practical automation.
       </p>
-      <a href="#contact">Request an analysis</a>
+      <a href="#contact" data-i18n="hero_cta">Request an analysis</a>
     </div>
 
     <div class="card">
-      <strong>Typical problems we solve:</strong>
+      <strong data-i18n="problems_title">Typical problems we solve:</strong>
       <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
-        <li>Missed or delayed customer requests</li>
-        <li>Manual handling across multiple platforms</li>
-        <li>High dependency on owner attention</li>
-        <li>Operational errors and data risk</li>
+        <li data-i18n="problem_1">Missed or delayed customer requests</li>
+        <li data-i18n="problem_2">Manual handling across multiple platforms</li>
+        <li data-i18n="problem_3">High dependency on owner attention</li>
+        <li data-i18n="problem_4">Operational errors and data risk</li>
       </ul>
     </div>
   </section>
 
   <section id="how" class="section">
-    <h2>How it works</h2>
+    <h2 data-i18n="how_title">How it works</h2>
     <div class="grid">
       <div class="card">
-        <h3>1. Diagnose</h3>
-        <p>You describe your operational issue through a short form.</p>
+        <h3 data-i18n="step_1_title">1. Diagnose</h3>
+        <p data-i18n="step_1_desc">You describe your operational issue through a short form.</p>
       </div>
       <div class="card">
-        <h3>2. Analyse</h3>
-        <p>We evaluate where rules can replace manual decisions.</p>
+        <h3 data-i18n="step_2_title">2. Analyse</h3>
+        <p data-i18n="step_2_desc">We evaluate where rules can replace manual decisions.</p>
       </div>
       <div class="card">
-        <h3>3. Implement</h3>
-        <p>We build a simple, reliable automation adapted to your workflow.</p>
+        <h3 data-i18n="step_3_title">3. Implement</h3>
+        <p data-i18n="step_3_desc">We build a simple, reliable automation adapted to your workflow.</p>
       </div>
       <div class="card">
-        <h3>4. Deliver</h3>
-        <p>You receive documentation and a short walkthrough.</p>
+        <h3 data-i18n="step_4_title">4. Deliver</h3>
+        <p data-i18n="step_4_desc">You receive documentation and a short walkthrough.</p>
       </div>
     </div>
   </section>
 
   <section id="service" class="section">
-    <h2>Service scope</h2>
+    <h2 data-i18n="service_title">Service scope</h2>
     <div class="grid">
       <div class="card">
-        <h3>What we do</h3>
-        <p>
+        <h3 data-i18n="what_we_do_title">What we do</h3>
+        <p data-i18n="what_we_do_desc">
           Operational automation, workflow centralisation,
           notifications, basic integrations and error prevention.
         </p>
       </div>
       <div class="card">
-        <h3>What we don’t do</h3>
-        <p>
+        <h3 data-i18n="what_we_dont_title">What we don't do</h3>
+        <p data-i18n="what_we_dont_desc">
           Daily operation, customer service management,
           or long-term business administration.
         </p>
       </div>
       <div class="card">
-        <h3>Investment</h3>
-        <p>
+        <h3 data-i18n="investment_title">Investment</h3>
+        <p data-i18n="investment_desc">
           Automation projects start from €250,
           adjusted according to complexity.
         </p>
@@ -248,9 +288,9 @@
 
   <section id="contact" class="section">
     <div class="cta">
-      <h2>Request an operational analysis</h2>
-      <p>Please answer a few questions so we can assess your case.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank">
+      <h2 data-i18n="cta_title">Request an operational analysis</h2>
+      <p data-i18n="cta_desc">Please answer a few questions so we can assess your case.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-i18n="cta_button">
         Open the form
       </a>
     </div>
@@ -258,9 +298,134 @@
 
 </main>
 
-<footer>
+<footer data-i18n="footer">
   © 2025 Europerations — Operational Automation
 </footer>
 
+<script>
+const translations = {
+  en: {
+    nav_how: "How it works",
+    nav_service: "Service",
+    nav_contact: "Contact",
+    hero_title: "We analyse operational problems caused by manual or disorganised workflows.",
+    hero_description: "We help European businesses eliminate operational bottlenecks, reduce human error, and recover lost time through practical automation.",
+    hero_cta: "Request an analysis",
+    problems_title: "Typical problems we solve:",
+    problem_1: "Missed or delayed customer requests",
+    problem_2: "Manual handling across multiple platforms",
+    problem_3: "High dependency on owner attention",
+    problem_4: "Operational errors and data risk",
+    how_title: "How it works",
+    step_1_title: "1. Diagnose",
+    step_1_desc: "You describe your operational issue through a short form.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "We evaluate where rules can replace manual decisions.",
+    step_3_title: "3. Implement",
+    step_3_desc: "We build a simple, reliable automation adapted to your workflow.",
+    step_4_title: "4. Deliver",
+    step_4_desc: "You receive documentation and a short walkthrough.",
+    service_title: "Service scope",
+    what_we_do_title: "What we do",
+    what_we_do_desc: "Operational automation, workflow centralisation, notifications, basic integrations and error prevention.",
+    what_we_dont_title: "What we don't do",
+    what_we_dont_desc: "Daily operation, customer service management, or long-term business administration.",
+    investment_title: "Investment",
+    investment_desc: "Automation projects start from €250, adjusted according to complexity.",
+    cta_title: "Request an operational analysis",
+    cta_desc: "Please answer a few questions so we can assess your case.",
+    cta_button: "Open the form",
+    footer: "© 2025 Europerations — Operational Automation"
+  },
+  de: {
+    nav_how: "Wie es funktioniert",
+    nav_service: "Service",
+    nav_contact: "Kontakt",
+    hero_title: "Wir analysieren operative Probleme, die durch manuelle oder unorganisierte Arbeitsabläufe verursacht werden.",
+    hero_description: "Wir helfen europäischen Unternehmen, operative Engpässe zu beseitigen, menschliche Fehler zu reduzieren und verlorene Zeit durch praktische Automatisierung zurückzugewinnen.",
+    hero_cta: "Analyse anfordern",
+    problems_title: "Typische Probleme, die wir lösen:",
+    problem_1: "Verpasste oder verzögerte Kundenanfragen",
+    problem_2: "Manuelle Bearbeitung über mehrere Plattformen",
+    problem_3: "Hohe Abhängigkeit von der Aufmerksamkeit des Eigentümers",
+    problem_4: "Betriebsfehler und Datenrisiken",
+    how_title: "Wie es funktioniert",
+    step_1_title: "1. Diagnose",
+    step_1_desc: "Sie beschreiben Ihr operatives Problem über ein kurzes Formular.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "Wir bewerten, wo Regeln manuelle Entscheidungen ersetzen können.",
+    step_3_title: "3. Implementierung",
+    step_3_desc: "Wir erstellen eine einfache, zuverlässige Automatisierung, die an Ihren Workflow angepasst ist.",
+    step_4_title: "4. Lieferung",
+    step_4_desc: "Sie erhalten Dokumentation und eine kurze Einführung.",
+    service_title: "Leistungsumfang",
+    what_we_do_title: "Was wir tun",
+    what_we_do_desc: "Operative Automatisierung, Workflow-Zentralisierung, Benachrichtigungen, grundlegende Integrationen und Fehlervermeidung.",
+    what_we_dont_title: "Was wir nicht tun",
+    what_we_dont_desc: "Täglicher Betrieb, Kundenservice-Management oder langfristige Geschäftsverwaltung.",
+    investment_title: "Investition",
+    investment_desc: "Automatisierungsprojekte beginnen ab €250, angepasst an die Komplexität.",
+    cta_title: "Operative Analyse anfordern",
+    cta_desc: "Bitte beantworten Sie einige Fragen, damit wir Ihren Fall bewerten können.",
+    cta_button: "Formular öffnen",
+    footer: "© 2025 Europerations — Operative Automatisierung"
+  },
+  fr: {
+    nav_how: "Comment ça marche",
+    nav_service: "Service",
+    nav_contact: "Contact",
+    hero_title: "Nous analysons les problèmes opérationnels causés par des flux de travail manuels ou désorganisés.",
+    hero_description: "Nous aidons les entreprises européennes à éliminer les goulots d'étranglement opérationnels, à réduire les erreurs humaines et à récupérer le temps perdu grâce à l'automatisation pratique.",
+    hero_cta: "Demander une analyse",
+    problems_title: "Problèmes typiques que nous résolvons:",
+    problem_1: "Demandes clients manquées ou retardées",
+    problem_2: "Traitement manuel sur plusieurs plateformes",
+    problem_3: "Forte dépendance à l'attention du propriétaire",
+    problem_4: "Erreurs opérationnelles et risques de données",
+    how_title: "Comment ça marche",
+    step_1_title: "1. Diagnostic",
+    step_1_desc: "Vous décrivez votre problème opérationnel via un court formulaire.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "Nous évaluons où les règles peuvent remplacer les décisions manuelles.",
+    step_3_title: "3. Mise en œuvre",
+    step_3_desc: "Nous construisons une automatisation simple et fiable adaptée à votre flux de travail.",
+    step_4_title: "4. Livraison",
+    step_4_desc: "Vous recevez la documentation et une brève présentation.",
+    service_title: "Portée du service",
+    what_we_do_title: "Ce que nous faisons",
+    what_we_do_desc: "Automatisation opérationnelle, centralisation des flux de travail, notifications, intégrations de base et prévention des erreurs.",
+    what_we_dont_title: "Ce que nous ne faisons pas",
+    what_we_dont_desc: "Opération quotidienne, gestion du service client ou administration commerciale à long terme.",
+    investment_title: "Investissement",
+    investment_desc: "Les projets d'automatisation commencent à partir de 250€, ajustés selon la complexité.",
+    cta_title: "Demander une analyse opérationnelle",
+    cta_desc: "Veuillez répondre à quelques questions afin que nous puissions évaluer votre cas.",
+    cta_button: "Ouvrir le formulaire",
+    footer: "© 2025 Europerations — Automatisation Opérationnelle"
+  }
+};
+
+function changeLanguage(lang) {
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  
+  document.documentElement.lang = lang;
+  localStorage.setItem('preferredLanguage', lang);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+  document.getElementById('languageSelect').value = savedLang;
+  if (savedLang !== 'en') {
+    changeLanguage(savedLang);
+  }
+});
+</script>
+
 </body>
-</html> 
+</html>
