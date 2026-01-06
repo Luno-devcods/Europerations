@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms of Service — Europerations</title>
+  <title>Europerations — Operational Automation</title>
 
   <style>
     :root {
@@ -13,7 +13,6 @@
       --accent: #2563eb;
       --card: #ffffff;
       --border: #e5e7eb;
-      --light-gray: #64748b;
     }
 
     * {
@@ -55,104 +54,122 @@
       font-weight: 500;
     }
 
+    .language-selector {
+      position: relative;
+      display: inline-block;
+    }
+
+    .language-selector select {
+      padding: 8px 32px 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--card);
+      color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23334155' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+
+    .language-selector select:hover {
+      border-color: var(--accent);
+    }
+
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 40px 20px 80px;
     }
 
-    .page-header {
-      text-align: center;
-      margin-bottom: 60px;
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
     }
 
-    .page-header h1 {
+    .hero h1 {
       font-size: 42px;
-      margin-bottom: 16px;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
 
-    .page-header .last-updated {
-      color: var(--light-gray);
-      font-size: 14px;
+    .hero p {
+      font-size: 18px;
+      color: var(--secondary);
+      margin-bottom: 32px;
     }
 
-    .content {
+    .hero a {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card {
       background-color: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 48px;
-    }
-
-    .intro {
-      margin-bottom: 48px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .intro p {
-      color: var(--secondary);
-      font-size: 16px;
-      line-height: 1.7;
+      padding: 32px;
     }
 
     .section {
-      margin-bottom: 48px;
+      margin-bottom: 80px;
     }
 
     .section h2 {
-      font-size: 24px;
-      margin-bottom: 16px;
-      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 24px;
     }
 
-    .section h3 {
-      font-size: 18px;
-      margin: 24px 0 12px 0;
-      color: var(--secondary);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
-    .section p {
-      color: var(--secondary);
-      margin-bottom: 16px;
-      line-height: 1.7;
-    }
-
-    .section ul {
-      margin: 16px 0 16px 24px;
-      color: var(--secondary);
-    }
-
-    .section li {
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-
-    .placeholder {
-      background-color: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      padding: 16px;
-      margin: 16px 0;
-      font-style: italic;
-      color: #92400e;
-      font-size: 14px;
-    }
-
-    .contact-section {
-      background-color: #f0f9ff;
-      border: 1px solid #bae6fd;
-      border-radius: 8px;
-      padding: 24px;
-      margin-top: 48px;
-    }
-
-    .contact-section h3 {
-      color: var(--primary);
+    .grid .card h3 {
       margin-bottom: 12px;
+      font-size: 18px;
     }
 
-    .contact-section p {
+    .grid .card p {
       color: var(--secondary);
-      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 48px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 12px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .cta a {
+      background-color: white;
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     footer {
@@ -160,27 +177,21 @@
       padding: 32px 20px;
       font-size: 14px;
       color: var(--secondary);
-      max-width: 900px;
-      margin: auto;
     }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .content {
-        padding: 32px 24px;
-      }
-
-      .page-header h1 {
-        font-size: 32px;
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
       }
 
       header {
         flex-direction: column;
         gap: 20px;
+      }
+
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -190,250 +201,231 @@
 <header>
   <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png/europerations-logo.png" alt="Europerations logo">
   <nav>
-    <a href="index.html">Home</a>
-    <a href="#contact">Contact</a>
+    <a href="#how" data-i18n="nav_how">How it works</a>
+    <a href="#service" data-i18n="nav_service">Service</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+    <div class="language-selector">
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+    </div>
   </nav>
 </header>
 
 <main>
-  <div class="page-header">
-    <h1>Terms of Service</h1>
-    <p class="last-updated">Last updated: [INSERIR DATA]</p>
-  </div>
 
-  <div class="content">
-    
-    <div class="intro">
-      <p>
-        <strong>Welcome to Europerations.</strong> By using our services, you agree to these Terms of Service. Please read them carefully.
+  <section class="hero">
+    <div>
+      <h1 data-i18n="hero_title">We analyse operational problems caused by manual or disorganised workflows.</h1>
+      <p data-i18n="hero_description">
+        We help European businesses eliminate operational bottlenecks, reduce human error,
+        and recover lost time through practical automation.
       </p>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Adicione aqui uma introdução geral sobre a empresa e o propósito destes termos. Explique brevemente o que são os serviços da Europerations.
-      </div>
+      <a href="#contact" data-i18n="hero_cta">Request an analysis</a>
     </div>
 
-    <!-- 1. ACCEPTANCE OF TERMS -->
-    <section class="section">
-      <h2>1. Acceptance of Terms</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Descreva como o cliente aceita estes termos (ao contratar o serviço, assinar contrato, preencher formulário, etc.). Especifique que o uso dos serviços implica aceitação automática.
-      </div>
-      <p>[Seu texto aqui sobre aceitação dos termos]</p>
-    </section>
-
-    <!-- 2. SERVICES DESCRIPTION -->
-    <section class="section">
-      <h2>2. Services Description</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Descreva detalhadamente os serviços oferecidos pela Europerations: análise operacional, automação de workflows, integrações, etc. Seja específico sobre o que está incluído e o que não está.
-      </div>
-      
-      <h3>2.1 What We Provide</h3>
-      <p>[Descrever serviços incluídos]</p>
-      
-      <h3>2.2 What Is Not Included</h3>
-      <p>[Descrever o que não está incluído nos serviços]</p>
-    </section>
-
-    <!-- 3. CLIENT OBLIGATIONS -->
-    <section class="section">
-      <h2>3. Client Obligations</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Liste as responsabilidades do cliente, como: fornecer informações precisas, dar acesso necessário aos sistemas, cumprir prazos de feedback, pagar dentro do prazo, etc.
-      </div>
-      <ul>
-        <li>[Obrigação 1 do cliente]</li>
-        <li>[Obrigação 2 do cliente]</li>
-        <li>[Obrigação 3 do cliente]</li>
+    <div class="card">
+      <strong data-i18n="problems_title">Typical problems we solve:</strong>
+      <ul style="margin-top:16px; padding-left:20px; color: var(--secondary);">
+        <li data-i18n="problem_1">Missed or delayed customer requests</li>
+        <li data-i18n="problem_2">Manual handling across multiple platforms</li>
+        <li data-i18n="problem_3">High dependency on owner attention</li>
+        <li data-i18n="problem_4">Operational errors and data risk</li>
       </ul>
-    </section>
-
-    <!-- 4. PRICING AND PAYMENT -->
-    <section class="section">
-      <h2>4. Pricing and Payment</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Explique como funciona a precificação (valor inicial de €250, ajustes conforme complexidade). Detalhe formas de pagamento aceitas, prazos, políticas de reembolso, o que acontece em caso de atraso no pagamento.
-      </div>
-      
-      <h3>4.1 Service Fees</h3>
-      <p>[Explicar estrutura de preços]</p>
-      
-      <h3>4.2 Payment Terms</h3>
-      <p>[Explicar condições de pagamento]</p>
-      
-      <h3>4.3 Refund Policy</h3>
-      <p>[Explicar política de reembolso]</p>
-    </section>
-
-    <!-- 5. PROJECT TIMELINE -->
-    <section class="section">
-      <h2>5. Project Timeline and Delivery</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Explique os prazos típicos de entrega, o processo de aprovação, o que acontece se houver atrasos (da sua parte ou do cliente). Mencione que prazos podem variar conforme complexidade.
-      </div>
-      <p>[Seu texto sobre prazos e entrega]</p>
-    </section>
-
-    <!-- 6. INTELLECTUAL PROPERTY -->
-    <section class="section">
-      <h2>6. Intellectual Property Rights</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Defina quem é dono do quê após o projeto. Geralmente: o cliente possui a automação/solução entregue, mas você mantém direitos sobre ferramentas/metodologias proprietárias. Esclareça uso de software de terceiros.
-      </div>
-      
-      <h3>6.1 Ownership of Deliverables</h3>
-      <p>[Explicar propriedade das entregas]</p>
-      
-      <h3>6.2 License and Usage Rights</h3>
-      <p>[Explicar licenças e direitos de uso]</p>
-    </section>
-
-    <!-- 7. CONFIDENTIALITY -->
-    <section class="section">
-      <h2>7. Confidentiality</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Explique como você trata informações confidenciais do cliente (dados de negócio, credenciais de acesso, etc.). Garanta que não compartilhará com terceiros. Defina exceções legais se aplicável.
-      </div>
-      <p>[Seu texto sobre confidencialidade]</p>
-    </section>
-
-    <!-- 8. DATA PROTECTION & PRIVACY -->
-    <section class="section">
-      <h2>8. Data Protection and Privacy</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Explique conformidade com GDPR (Lei Geral de Proteção de Dados da UE). Como você coleta, processa e armazena dados pessoais. Direitos do cliente sobre seus dados. Link para Privacy Policy separada se tiver.
-      </div>
-      <p>[Seu texto sobre proteção de dados e GDPR]</p>
-    </section>
-
-    <!-- 9. WARRANTIES AND DISCLAIMERS -->
-    <section class="section">
-      <h2>9. Warranties and Disclaimers</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Defina garantias que você oferece (ex: solução funcionará conforme especificado) e limitações (não garante resultados específicos de negócio). Importante para proteção legal.
-      </div>
-      
-      <h3>9.1 Service Warranties</h3>
-      <p>[O que você garante]</p>
-      
-      <h3>9.2 Disclaimers</h3>
-      <p>[O que você NÃO garante]</p>
-    </section>
-
-    <!-- 10. LIMITATION OF LIABILITY -->
-    <section class="section">
-      <h2>10. Limitation of Liability</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: IMPORTANTE - Limite sua responsabilidade legal. Exemplo: responsabilidade limitada ao valor pago pelo serviço. Não responsável por lucros cessantes, danos indiretos, etc. Consulte advogado para texto adequado.
-      </div>
-      <p>[Seu texto sobre limitação de responsabilidade]</p>
-    </section>
-
-    <!-- 11. SUPPORT AND MAINTENANCE -->
-    <section class="section">
-      <h2>11. Support and Maintenance</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Esclareça se oferece suporte pós-entrega, por quanto tempo, se é pago ou incluído. O que acontece se a automação parar de funcionar? Há manutenção contínua disponível?
-      </div>
-      <p>[Seu texto sobre suporte e manutenção]</p>
-    </section>
-
-    <!-- 12. MODIFICATIONS TO SERVICES -->
-    <section class="section">
-      <h2>12. Modifications to Services</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Reserve o direito de modificar ou descontinuar serviços. Como você notificará clientes sobre mudanças. Mudanças no escopo de projetos em andamento.
-      </div>
-      <p>[Seu texto sobre modificações de serviço]</p>
-    </section>
-
-    <!-- 13. TERMINATION -->
-    <section class="section">
-      <h2>13. Termination</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Explique em que circunstâncias o contrato pode ser encerrado (por você ou pelo cliente). Processo de cancelamento, possíveis penalidades, o que acontece com trabalho já realizado e pagamentos.
-      </div>
-      
-      <h3>13.1 Termination by Client</h3>
-      <p>[Como o cliente pode encerrar]</p>
-      
-      <h3>13.2 Termination by Europerations</h3>
-      <p>[Como e quando você pode encerrar]</p>
-    </section>
-
-    <!-- 14. FORCE MAJEURE -->
-    <section class="section">
-      <h2>14. Force Majeure</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Proteja-se de eventos fora do seu controle (desastres naturais, pandemias, guerras, falhas de internet/servidores de terceiros, etc.). Você não será responsável por atrasos causados por esses eventos.
-      </div>
-      <p>[Seu texto sobre força maior]</p>
-    </section>
-
-    <!-- 15. DISPUTE RESOLUTION -->
-    <section class="section">
-      <h2>15. Dispute Resolution</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Defina como disputas serão resolvidas. Mediação? Arbitragem? Tribunal? Qual jurisdição/país se aplica? (importante para empresa europeia). Recomendo consultar advogado.
-      </div>
-      <p>[Seu texto sobre resolução de disputas]</p>
-    </section>
-
-    <!-- 16. GOVERNING LAW -->
-    <section class="section">
-      <h2>16. Governing Law</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Especifique qual lei nacional governa estes termos (ex: Lei da Alemanha, França, etc.). Deve corresponder à localização da sua empresa. IMPORTANTE: consulte advogado local.
-      </div>
-      <p>[Especificar lei governante e jurisdição]</p>
-    </section>
-
-    <!-- 17. CHANGES TO TERMS -->
-    <section class="section">
-      <h2>17. Changes to These Terms</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Reserve o direito de atualizar estes termos. Como você notificará os clientes? Com quanto tempo de antecedência? Uso continuado implica aceitação das mudanças?
-      </div>
-      <p>[Seu texto sobre mudanças nos termos]</p>
-    </section>
-
-    <!-- 18. MISCELLANEOUS -->
-    <section class="section">
-      <h2>18. Miscellaneous</h2>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Cláusulas gerais: se uma parte dos termos for inválida, o resto permanece válido; estes termos constituem o acordo completo; comunicações por escrito são oficiais; etc.
-      </div>
-      
-      <h3>18.1 Severability</h3>
-      <p>[Se uma cláusula for inválida, as outras permanecem]</p>
-      
-      <h3>18.2 Entire Agreement</h3>
-      <p>[Estes termos representam o acordo completo]</p>
-      
-      <h3>18.3 Waiver</h3>
-      <p>[Não exercer um direito não significa renúncia]</p>
-    </section>
-
-    <!-- CONTACT INFORMATION -->
-    <div class="contact-section">
-      <h3>Contact Information</h3>
-      <div class="placeholder">
-        📝 INSTRUÇÕES: Adicione informações completas de contato da sua empresa para questões sobre estes termos.
-      </div>
-      <p><strong>Company Name:</strong> [Europerations - Nome legal completo]</p>
-      <p><strong>Address:</strong> [Endereço completo]</p>
-      <p><strong>Email:</strong> [email de contato]</p>
-      <p><strong>Phone:</strong> [telefone]</p>
-      <p><strong>Company Registration:</strong> [Número de registro da empresa]</p>
-      <p><strong>VAT Number:</strong> [Número VAT se aplicável]</p>
     </div>
+  </section>
 
-  </div>
+  <section id="how" class="section">
+    <h2 data-i18n="how_title">How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="step_1_title">1. Diagnose</h3>
+        <p data-i18n="step_1_desc">You describe your operational issue through a short form.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="step_2_title">2. Analyse</h3>
+        <p data-i18n="step_2_desc">We evaluate where rules can replace manual decisions.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="step_3_title">3. Implement</h3>
+        <p data-i18n="step_3_desc">We build a simple, reliable automation adapted to your workflow.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="step_4_title">4. Deliver</h3>
+        <p data-i18n="step_4_desc">You receive documentation and a short walkthrough.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="section">
+    <h2 data-i18n="service_title">Service scope</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="what_we_do_title">What we do</h3>
+        <p data-i18n="what_we_do_desc">
+          Operational automation, workflow centralisation,
+          notifications, basic integrations and error prevention.
+        </p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="what_we_dont_title">What we don't do</h3>
+        <p data-i18n="what_we_dont_desc">
+          Daily operation, customer service management,
+          or long-term business administration.
+        </p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="investment_title">Investment</h3>
+        <p data-i18n="investment_desc">
+          Automation projects start from €250,
+          adjusted according to complexity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="cta">
+      <h2 data-i18n="cta_title">Request an operational analysis</h2>
+      <p data-i18n="cta_desc">Please answer a few questions so we can assess your case.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-i18n="cta_button">
+        Open the form
+      </a>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <p>© 2025 Europerations — <a href="index.html">Back to Home</a></p>
+<footer data-i18n="footer">
+  © 2025 Europerations — Operational Automation
 </footer>
+
+<script>
+const translations = {
+  en: {
+    nav_how: "How it works",
+    nav_service: "Service",
+    nav_contact: "Contact",
+    hero_title: "We analyse operational problems caused by manual or disorganised workflows.",
+    hero_description: "We help European businesses eliminate operational bottlenecks, reduce human error, and recover lost time through practical automation.",
+    hero_cta: "Request an analysis",
+    problems_title: "Typical problems we solve:",
+    problem_1: "Missed or delayed customer requests",
+    problem_2: "Manual handling across multiple platforms",
+    problem_3: "High dependency on owner attention",
+    problem_4: "Operational errors and data risk",
+    how_title: "How it works",
+    step_1_title: "1. Diagnose",
+    step_1_desc: "You describe your operational issue through a short form.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "We evaluate where rules can replace manual decisions.",
+    step_3_title: "3. Implement",
+    step_3_desc: "We build a simple, reliable automation adapted to your workflow.",
+    step_4_title: "4. Deliver",
+    step_4_desc: "You receive documentation and a short walkthrough.",
+    service_title: "Service scope",
+    what_we_do_title: "What we do",
+    what_we_do_desc: "Operational automation, workflow centralisation, notifications, basic integrations and error prevention.",
+    what_we_dont_title: "What we don't do",
+    what_we_dont_desc: "Daily operation, customer service management, or long-term business administration.",
+    investment_title: "Investment",
+    investment_desc: "Automation projects start from €250, adjusted according to complexity.",
+    cta_title: "Request an operational analysis",
+    cta_desc: "Please answer a few questions so we can assess your case.",
+    cta_button: "Open the form",
+    footer: "© 2025 Europerations — Operational Automation"
+  },
+  de: {
+    nav_how: "Wie es funktioniert",
+    nav_service: "Service",
+    nav_contact: "Kontakt",
+    hero_title: "Wir analysieren operative Probleme, die durch manuelle oder unorganisierte Arbeitsabläufe verursacht werden.",
+    hero_description: "Wir helfen europäischen Unternehmen, operative Engpässe zu beseitigen, menschliche Fehler zu reduzieren und verlorene Zeit durch praktische Automatisierung zurückzugewinnen.",
+    hero_cta: "Analyse anfordern",
+    problems_title: "Typische Probleme, die wir lösen:",
+    problem_1: "Verpasste oder verzögerte Kundenanfragen",
+    problem_2: "Manuelle Bearbeitung über mehrere Plattformen",
+    problem_3: "Hohe Abhängigkeit von der Aufmerksamkeit des Eigentümers",
+    problem_4: "Betriebsfehler und Datenrisiken",
+    how_title: "Wie es funktioniert",
+    step_1_title: "1. Diagnose",
+    step_1_desc: "Sie beschreiben Ihr operatives Problem über ein kurzes Formular.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "Wir bewerten, wo Regeln manuelle Entscheidungen ersetzen können.",
+    step_3_title: "3. Implementierung",
+    step_3_desc: "Wir erstellen eine einfache, zuverlässige Automatisierung, die an Ihren Workflow angepasst ist.",
+    step_4_title: "4. Lieferung",
+    step_4_desc: "Sie erhalten Dokumentation und eine kurze Einführung.",
+    service_title: "Leistungsumfang",
+    what_we_do_title: "Was wir tun",
+    what_we_do_desc: "Operative Automatisierung, Workflow-Zentralisierung, Benachrichtigungen, grundlegende Integrationen und Fehlervermeidung.",
+    what_we_dont_title: "Was wir nicht tun",
+    what_we_dont_desc: "Täglicher Betrieb, Kundenservice-Management oder langfristige Geschäftsverwaltung.",
+    investment_title: "Investition",
+    investment_desc: "Automatisierungsprojekte beginnen ab €250, angepasst an die Komplexität.",
+    cta_title: "Operative Analyse anfordern",
+    cta_desc: "Bitte beantworten Sie einige Fragen, damit wir Ihren Fall bewerten können.",
+    cta_button: "Formular öffnen",
+    footer: "© 2025 Europerations — Operative Automatisierung"
+  },
+  fr: {
+    nav_how: "Comment ça marche",
+    nav_service: "Service",
+    nav_contact: "Contact",
+    hero_title: "Nous analysons les problèmes opérationnels causés par des flux de travail manuels ou désorganisés.",
+    hero_description: "Nous aidons les entreprises européennes à éliminer les goulots d'étranglement opérationnels, à réduire les erreurs humaines et à récupérer le temps perdu grâce à l'automatisation pratique.",
+    hero_cta: "Demander une analyse",
+    problems_title: "Problèmes typiques que nous résolvons:",
+    problem_1: "Demandes clients manquées ou retardées",
+    problem_2: "Traitement manuel sur plusieurs plateformes",
+    problem_3: "Forte dépendance à l'attention du propriétaire",
+    problem_4: "Erreurs opérationnelles et risques de données",
+    how_title: "Comment ça marche",
+    step_1_title: "1. Diagnostic",
+    step_1_desc: "Vous décrivez votre problème opérationnel via un court formulaire.",
+    step_2_title: "2. Analyse",
+    step_2_desc: "Nous évaluons où les règles peuvent remplacer les décisions manuelles.",
+    step_3_title: "3. Mise en œuvre",
+    step_3_desc: "Nous construisons une automatisation simple et fiable adaptée à votre flux de travail.",
+    step_4_title: "4. Livraison",
+    step_4_desc: "Vous recevez la documentation et une brève présentation.",
+    service_title: "Portée du service",
+    what_we_do_title: "Ce que nous faisons",
+    what_we_do_desc: "Automatisation opérationnelle, centralisation des flux de travail, notifications, intégrations de base et prévention des erreurs.",
+    what_we_dont_title: "Ce que nous ne faisons pas",
+    what_we_dont_desc: "Opération quotidienne, gestion du service client ou administration commerciale à long terme.",
+    investment_title: "Investissement",
+    investment_desc: "Les projets d'automatisation commencent à partir de 250€, ajustés selon la complexité.",
+    cta_title: "Demander une analyse opérationnelle",
+    cta_desc: "Veuillez répondre à quelques questions afin que nous puissions évaluer votre cas.",
+    cta_button: "Ouvrir le formulaire",
+    footer: "© 2025 Europerations — Automatisation Opérationnelle"
+  }
+};
+
+function changeLanguage(lang) {
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  
+  document.documentElement.lang = lang;
+  localStorage.setItem('preferredLanguage', lang);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+  document.getElementById('languageSelect').value = savedLang;
+  if (savedLang !== 'en') {
+    changeLanguage(savedLang);
+  }
+});
+</script>
 
 </body>
 </html>
