@@ -199,7 +199,7 @@
 <body>
 
 <header>
-  <img src="https://i.ibb.co/PvfXw14K/Design-sem-nome-1-removebg-preview.png" alt="Hard4Easy logo">
+  <img src="https://i.ibb.co/8n36R7st/Gemini-Generated-Image-dnvzxbdnvzxbdnvz-removebg-preview.png/europerations-logo.png" alt="Europerations logo">
   <nav>
     <a href="#how" data-i18n="nav_how">How it works</a>
     <a href="#service" data-i18n="nav_service">Service</a>
@@ -279,7 +279,7 @@
       <div class="card">
         <h3 data-i18n="investment_title">Investment</h3>
         <p data-i18n="investment_desc">
-          Automation projects start from €600,
+          Automation projects start from €250,
           adjusted according to complexity.
         </p>
       </div>
@@ -289,17 +289,44 @@
   <section id="contact" class="section">
     <div class="cta">
       <h2 data-i18n="cta_title">Request an operational analysis</h2>
-      <p data-i18n="cta_desc">Please answer a few questions so we can assess your case.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd_PugXE2fvAta3r4nb5J1-7gpGrOU5d-_Cx3dWwPkFRyrKA/viewform" target="_blank" data-i18n="cta_button">
-        Open the form
-      </a>
+      <p data-i18n="cta_desc">Chat with our automation agent to assess your case.</p>
+      
+      <!-- Chat Interface -->
+      <div style="max-width: 700px; margin: 32px auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        
+        <!-- Chat Messages Area -->
+        <div id="chatMessages" style="height: 400px; overflow-y: auto; padding: 24px; background: #f8f9fa; display: flex; flex-direction: column; gap: 16px;">
+          <!-- Messages will appear here -->
+        </div>
+        
+        <!-- Chat Input Area -->
+        <div style="padding: 20px; background: white; border-top: 1px solid #e5e7eb; display: flex; gap: 12px;">
+          <input 
+            id="chatInput" 
+            type="text"
+            placeholder="Type your message..."
+            data-i18n-placeholder="chat_placeholder"
+            style="flex: 1; padding: 14px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;"
+            onkeypress="if(event.key==='Enter') sendChatMessage()"
+          />
+          <button 
+            onclick="sendChatMessage()" 
+            style="padding: 14px 28px; background-color: var(--accent); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;"
+            onmouseover="this.style.opacity='0.9'"
+            onmouseout="this.style.opacity='1'"
+            data-i18n="chat_send"
+          >
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p data-i18n="footer">© 2025 Hard4Easy — Operational Automation</p>
+  <p data-i18n="footer">© 2025 Europerations — Operational Automation</p>
   <p style="margin-top: 12px;">
     <a href="termos.html" style="color: var(--accent); text-decoration: none; margin: 0 12px;" data-i18n="footer_terms">Terms of Service</a>
     <span style="color: var(--secondary);">|</span>
@@ -340,7 +367,9 @@ const translations = {
     investment_title: "Investment",
     investment_desc: "Automation projects start from €250, adjusted according to complexity.",
     cta_title: "Request an operational analysis",
-    cta_desc: "Please answer a few questions so we can assess your case.",
+    cta_desc: "Chat with our automation agent to assess your case.",
+    chat_placeholder: "Type your message...",
+    chat_send: "Send",
     cta_button: "Open the form",
     footer: "© 2025 Europerations — Operational Automation"
   },
@@ -375,7 +404,9 @@ const translations = {
     investment_title: "Investition",
     investment_desc: "Automatisierungsprojekte beginnen ab €250, angepasst an die Komplexität.",
     cta_title: "Operative Analyse anfordern",
-    cta_desc: "Bitte beantworten Sie einige Fragen, damit wir Ihren Fall bewerten können.",
+    cta_desc: "Chatten Sie mit unserem Automatisierungsagenten, um Ihren Fall zu bewerten.",
+    chat_placeholder: "Schreiben Sie Ihre Nachricht...",
+    chat_send: "Senden",
     cta_button: "Formular öffnen",
     footer: "© 2025 Europerations — Operative Automatisierung"
   },
@@ -410,7 +441,9 @@ const translations = {
     investment_title: "Investissement",
     investment_desc: "Les projets d'automatisation commencent à partir de 250€, ajustés selon la complexité.",
     cta_title: "Demander une analyse opérationnelle",
-    cta_desc: "Veuillez répondre à quelques questions afin que nous puissions évaluer votre cas.",
+    cta_desc: "Discutez avec notre agent d'automatisation pour évaluer votre cas.",
+    chat_placeholder: "Tapez votre message...",
+    chat_send: "Envoyer",
     cta_button: "Ouvrir le formulaire",
     footer: "© 2025 Europerations — Automatisation Opérationnelle"
   }
@@ -435,7 +468,134 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedLang !== 'en') {
     changeLanguage(savedLang);
   }
+  
+  // Initialize chat with welcome message
+  initializeChat();
 });
+
+// Chat functionality
+const BACKEND_URL = "https://c9374455-8710-4919-86a4-2ce60fa2b53f-00-1tlbkab70rho5.picard.replit.dev/"; // Replace with your Replit URL
+
+function initializeChat() {
+  const welcomeMessages = {
+    en: "Hello! I'm your automation assistant. What's your company name and industry sector?",
+    de: "Hallo! Ich bin Ihr Automatisierungsassistent. Wie heißt Ihr Unternehmen und in welcher Branche sind Sie tätig?",
+    fr: "Bonjour! Je suis votre assistant d'automatisation. Quel est le nom de votre entreprise et votre secteur d'activité?"
+  };
+  
+  const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+  addChatMessage('agent', welcomeMessages[currentLang]);
+}
+
+function addChatMessage(sender, text) {
+  const chatMessages = document.getElementById('chatMessages');
+  const messageDiv = document.createElement('div');
+  
+  const isAgent = sender === 'agent';
+  const align = isAgent ? 'flex-start' : 'flex-end';
+  const bgColor = isAgent ? '#e5e7eb' : 'var(--accent)';
+  const textColor = isAgent ? 'var(--primary)' : 'white';
+  
+  messageDiv.style.cssText = `
+    display: flex;
+    justify-content: ${align};
+    animation: fadeIn 0.3s ease-in;
+  `;
+  
+  messageDiv.innerHTML = `
+    <div style="
+      max-width: 75%;
+      padding: 12px 16px;
+      background-color: ${bgColor};
+      color: ${textColor};
+      border-radius: 12px;
+      ${isAgent ? 'border-bottom-left-radius: 4px;' : 'border-bottom-right-radius: 4px;'}
+      line-height: 1.5;
+      word-wrap: break-word;
+    ">
+      ${isAgent ? '<strong style="font-size: 13px; opacity: 0.8;">Agent:</strong><br>' : ''}
+      ${text}
+    </div>
+  `;
+  
+  chatMessages.appendChild(messageDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function sendChatMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  
+  if (!message) return;
+  
+  // Clear input
+  input.value = '';
+  
+  // Add user message
+  addChatMessage('user', message);
+  
+  // Add typing indicator
+  const typingDiv = document.createElement('div');
+  typingDiv.id = 'typing-indicator';
+  typingDiv.style.cssText = 'display: flex; justify-content: flex-start;';
+  typingDiv.innerHTML = `
+    <div style="
+      padding: 12px 16px;
+      background-color: #e5e7eb;
+      border-radius: 12px;
+      border-bottom-left-radius: 4px;
+    ">
+      <span style="opacity: 0.6;">Typing...</span>
+    </div>
+  `;
+  document.getElementById('chatMessages').appendChild(typingDiv);
+  
+  try {
+    // Send message to backend
+    const response = await fetch(BACKEND_URL + "/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: message })
+    });
+    
+    const data = await response.json();
+    
+    // Remove typing indicator
+    document.getElementById('typing-indicator')?.remove();
+    
+    // Add agent response
+    addChatMessage('agent', data.reply);
+    
+  } catch (error) {
+    // Remove typing indicator
+    document.getElementById('typing-indicator')?.remove();
+    
+    // Show error message
+    const errorMessages = {
+      en: "Sorry, I'm having trouble connecting. Please try again or contact us directly.",
+      de: "Entschuldigung, ich habe Verbindungsprobleme. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+      fr: "Désolé, j'ai des problèmes de connexion. Veuillez réessayer ou nous contacter directement."
+    };
+    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+    addChatMessage('agent', errorMessages[currentLang]);
+    
+    console.error('Chat error:', error);
+  }
+}
+
+// Add CSS animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #chatInput:focus {
+    border-color: var(--accent) !important;
+  }
+`;
+document.head.appendChild(style);
 </script>
 
 </body>
